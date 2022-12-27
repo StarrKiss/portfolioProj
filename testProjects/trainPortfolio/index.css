@@ -148,7 +148,8 @@ html{
     background-position-y: center;
     background-repeat: repeat-x;
 
-    overflow: hidden;
+    overflow-x: clip;
+    overflow-y: visible;
 }
 
 .nav-item{
@@ -174,17 +175,22 @@ html{
 }
 
 
+.nav-item.nav-right{
+    align-self: flex-end;
+    margin-left: auto;
+}
+
 
 
 #selector{
     width: 200px;
     height:100%;
     position: absolute;
+    top:0px;
     left:-200px;
     border-radius: inherit;
     box-sizing: border-box;
-    border: #025a89 4px solid;
-    overflow: hidden;
+    border: #025a89 3px solid;
     z-index: 0;
     padding-inline: 20px;
     transition: all 0.3s cubic-bezier(.22,.61,.36,1);
@@ -194,15 +200,27 @@ html{
     pointer-events: none;
 }
 
+#selector.selectorOpen{
+    /* background-color: red; */
+    height: 500px;
+    z-index: 100;
+    top:0px;
+}
+
+#selectortwo.selectorOpen{
+    height: 500px;
+    top:0px;
+}
 
 #selectortwo{
+    top:0px;
     width: 200px;
     height:100%;
     position: absolute;
     left:-200px;
     border-radius: inherit;
     box-sizing: border-box;
-    border: #025a89 4px solid;
+    border: transparent 3px solid;
     overflow: hidden;
     
     padding-inline: 20px;
@@ -1407,6 +1425,17 @@ html{
     background-size: contain;
 }
 
+.loc-icon.clock{
+    background-image: url("clock-svgrepo-com.svg");
+}
+
+.loc-icon.icon-dropdown{
+    margin-left: 10px;
+    margin-right: -9px;
+    background-position-y: 2.5px;
+    background-image: url("dropdown-2.svg");
+}
+
 .test{
     display: flex;
     white-space: nowrap;
@@ -1414,8 +1443,25 @@ html{
     left:10px;
     top:calc(100% + 10px);
     font-family: "auxmono";
-
+    
     opacity: 0.5;
+}
+
+
+.test-right{
+    display: flex;
+    white-space: nowrap;
+    position: absolute;
+    right:10px;
+    top:calc(100% + 10px);
+    font-family: "auxmono";
+    
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.test-right em{
+    text-decoration: underline;
 }
 
 .test em{

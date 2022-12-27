@@ -2,11 +2,13 @@ const $ = document.querySelector.bind(document);
 
 let selector = $("#selector");
 let selectorTwo = $("#selectortwo");
+let navDropper = $("#nav-dropdown-more")
 
 const destinations = ["Nantar", "Mineyta", "Mezinta", "Briskton","Brisk","New Wye", "Briss", "Subtari", "Tanc-Maraj", "Maraj", "Amdri", "Brisan", "Jessin", "Dontal", "Ardinburg", "Jan", "Marisban", "Nurispol", "Nv. Prova", "Prova", "Nur. Drinsar", "Portland"]
 const statusoptions = ["BOARDING", "LATE", "EARLY", "DEPARTED", "ON-TIME"]
 const trainTypes = ["Regional", "Express", "Inter-city Express", "International", "Coastline", "Inter-city"]
 
+let navDropOpen = false;
 
 
 let departureList = []
@@ -131,6 +133,15 @@ function generateRows(depList){
     firstNode.remove()
 }
 
+function removeNavDropper(){
+    selector.classList.remove("selectorOpen")
+    selectorTwo.classList.remove("selectorOpen")
+}
+
+function activateNavDropper(){
+    selector.classList.add("selectorOpen")
+    selectorTwo.classList.add("selectorOpen")
+}
 function initMouseover(){
     const navParent = document.getElementById('navparent');
 
@@ -139,21 +150,42 @@ function initMouseover(){
         let tableChild = children[i];
         if(tableChild != selector && tableChild != selectorTwo){
         tableChild.addEventListener('mouseover', (event) => {
+            if(tableChild != navDropper){
+                navDropOpen = false;
+                removeNavDropper()
+            }
             selectingNav(tableChild)
         });
         tableChild.addEventListener('mouseleave', (event) => {
+            if(!navDropOpen){
+            resetSelectors()
+
             selector.style.left = -200 + "px";
             selector.style.width = 200 + "px"
 
             selectorTwo.style.left = -200 + "px";
             selectorTwo.style.width = 200 + "px"
+            }
         });
         
     }
 
     }
+
+    navDropper.addEventListener('mouseup', (event) => {
+        navDropOpen = !navDropOpen;
+        if(navDropOpen){
+            activateNavDropper()
+        }
+        else{
+            removeNavDropper()
+        }
+        console.log(navDropOpen)
+    }) 
 }
 
+
+ 
 function createAutocomplete(node, list){
     let destParent = node.querySelector('.auto-container')
     let nodeList = []
@@ -214,6 +246,11 @@ function createAutocomplete(node, list){
     
 }
 
+function resetSelectors(){
+    selectorTwo.style.backgroundColor = "rgb(255, 141, 79)"
+    selector.style.backdropFilter = "invert(1)"
+    selector.style.borderColor = "#025a89"
+}
 
 function selectingNav(node){
     selector.style.left = node.offsetLeft + "px";
@@ -222,7 +259,13 @@ function selectingNav(node){
     selectorTwo.style.left = node.offsetLeft + "px";
     selectorTwo.style.width = node.offsetWidth + "px"
     
-    
+    if(node.classList.contains("nav-right")){
+        selectorTwo.style.backgroundColor = "#f0f0e9"
+        selector.style.backdropFilter = "invert(0)"
+        selector.style.borderColor = "var(--border)"
+    }else{
+        resetSelectors()
+    }
 }
 
 function createInput(node){
