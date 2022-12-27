@@ -1,0 +1,69 @@
+const lines = [
+    ["Briskton","Brisk", "New Wye", "Briss", "Subtari", "Tanc-Maraj", "Maraj", "Amdri", "Brisan", "Jessin", "Dontal", "Ardinburg", "Jan", "Marisban", "Nurispol", "Mezinta", "Nv. Prova", "Prova", "Nur. Drinsar", "Portland"],
+    ["Brisk", "Mutsi", "Nantar", "Sivbenia"],
+    ["Maraj", "Sivi", "Brisan"],
+    ["Prova", "Ostpor", "Westenpor", "Sudpor", "Nordpor"]
+]
+
+let withoutAuthor = GitgraphJS.templateExtend(GitgraphJS.TemplateName.Metro,{
+    
+        colors: ["#0072b0", "#00b06d", "#00b8b2", "#c65300"],
+        commit: {
+            message: {
+              displayHash: false,
+              displayAuthor: false
+            },
+          },
+          branch: {
+            label: {
+              display: false,
+            },
+          },  
+    });
+    let options = {
+        author : "among us",
+        mode: "null",
+        template: withoutAuthor,
+        orientation: "vertical"
+
+    }
+    const graphContainer = document.getElementById("graph-container");
+
+    // Instantiate the graph.
+    const gitgraph = GitgraphJS.createGitgraph(graphContainer, options);
+
+    let branches = []
+
+    let commitOptions = {
+        sha1: "blah"
+    }
+    // Simulate git commands with Gitgraph API.
+    const mainline = gitgraph.branch("master");
+    for(let z = 0; z< lines[0].length; z++){
+        let shouldCommit = true;
+        for(let i = 1; i<lines.length; i++){
+            if(lines[i][lines[i].length-1] == lines[0][z]){
+                shouldCommit = false
+            }
+        }
+        if(shouldCommit){
+            mainline.commit(lines[0][z])
+        }
+
+        for(let i = 1; i<lines.length; i++){
+            if(lines[i][0] == lines[0][z]){
+                branches[i] = gitgraph.branch("Line " + (i+1))
+                var branchline = branches[i]
+                let toSubtract = 0;
+                if(lines[0].includes(lines[i][lines[i].length-1])){
+                    toSubtract = 1;
+                }
+                for(let x = 1; x< lines[i].length - toSubtract; x++){
+                    branchline.commit(lines[i][x]);
+                }
+            }
+            if(lines[i][lines[i].length-1] == lines[0][z]){
+                mainline.merge(branches[i], lines[0][z])
+            }
+        }
+    }

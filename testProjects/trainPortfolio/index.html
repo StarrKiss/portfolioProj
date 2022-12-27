@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AO Rail - Briss CTF</title>
+    <script type="text/javascript" src="https://livejs.com/live.js"></script>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0072b0">
+    <meta name="msapplication-TileColor" content="#0072b0">
+    <meta name="theme-color" content="#0072b0">
+
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-section" id="logo"><img id="logoimg" src="aologo.png"></div>
+        <div class="navbar-section blank stripes"></div>
+        <div class="navbar-section" id="nav-options">
+            <div id="navparent" class="inner-nav">
+                <div id="selector"></div>
+                <div id="selectortwo"></div>
+                <div cite="Home" class="nav-item">Home</div>
+                <div class="nav-item">Schedule</div>
+                <div class="nav-item">Train Fleet</div>
+                <div class="nav-item">Pre-book tickets</div>
+            </div>
+        </div>
+        <div class="navbar-section calendar">
+            <div id="date" class="innerCal">Wed, 24/11</div>
+            <div id="time" class="innerCal">10:12PM</div>
+        </div>
+        <div class="test"><div class="loc-icon"></div>Briss CTF | <em>Change Station</em></div>
+    </div>
+
+    <div class="main-body">
+
+
+        <div class="header-container">
+            <div class="station">Briss CTF</div>
+            <div class="stationContainer">
+                <div class="subStation before">New Wye</div>
+                <div class="subStation after">Subtari</div>
+            </div>
+            <div class="space-filler">
+                <div class="addressContainer">
+                    <div class="address"> Briss CTF<br>
+                        Worker's Ave. 10b<br>
+                        3321 Briss </div>
+                </div>
+            </div>
+        </div>
+        <div class="departure">
+            
+            <div class="infocontainer">
+            <div id="line-info-container" class="line-container">
+                <div class="inner-line">
+                    <div class="graph-holder">
+                        <div id="graph-container"></div>
+                    </div>
+                    <div id="info-box">
+                        <div id="train-box"></div>
+                        <div id="mini-info-container">
+                            <div id="line-header">Subtari<div id="arrowTo"></div>Brisk</div>
+                            <div id="main-info-container">
+                                <div id="tags-container">
+                                    <div class="tag">Express</div><div class="tag">8 Hours</div><div class="tag">Incl. Dining</div><div class="tag">Bedrooms Available</div><div class="tag">Stnrd. Fare</div>
+                                </div>
+                                <div id="daysRunningContainer">
+                                    <div id="daysRunningInner">
+                                        <div class="day day-not">
+                                            <div class="day-header">Mon</div>
+                                        </div>
+                                        <div class="day">
+                                            <div class="day-header">Tue</div>
+                                        </div>
+                                        <div class="day">
+                                            <div class="day-header">Wed</div>
+                                        </div>
+                                        <div class="day">
+                                            <div class="day-header">Thur</div>
+                                        </div>
+                                        <div class="day">
+                                            <div class="day-header">Fri</div>
+                                        </div>
+                                        <div class="day">
+                                            <div class="day-header">Sat</div>
+                                        </div>
+                                        <div class="day day-not">
+                                            <div class="day-header">Sun</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="departureHeader">
+                DEPARTURES
+            </div>
+            <table class="depContainer">
+                <thead>
+                <tr class="top-row">
+                    <td>Time</td>
+                    <td>No.</td>
+                    <td>Platform</td>
+                    <td>Dest.</td>
+                    <td>Status</td>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                     <tr id="singleRow" class="singleDep">
+                        <td><div class="timeDisplay depField"><span class="singleDigit">1</span><span class="singleDigit">2</span>:<span class="singleDigit">3</span><span class="singleDigit">3</span></div></td>
+                        <td><div class="numberDisplay depField"><span class="singleDigit">6</span><span class="singleDigit">4</span><span class="singleDigit">9</span><span class="singleDigit">0</span></div></td>
+                        <td><div class="platform depField"><span class="singleDigit">0</span><span class="singleDigit">9</span></div></td>
+                        <td><div class="destination depField"><span class="singleDigit">&nbsp;</span><span class="singleDigit">&nbsp;</span><span class="singleDigit">S</span><span class="singleDigit">u</span><span class="singleDigit">b</span><span class="singleDigit">t</span><span class="singleDigit">a</span><span class="singleDigit">r</span><span class="singleDigit">i</span></div></td>
+                        <td><div class="status status-boarding depField"><span class="singleDigit">B</span><span class="singleDigit">O</span><span class="singleDigit">A</span><span class="singleDigit">R</span><span class="singleDigit">D</span><span class="singleDigit">I</span><span class="singleDigit">N</span><span class="singleDigit">G</span></div></td>
+                     </tr>
+                     
+                    </tbody>
+            </table>
+            <div class="departureFooter">
+            </div>
+        </div>
+        <div class="filtering">
+            <div class="filtering-header">SEARCH</div>
+            <div class="filtering-box">
+                <div class="filtering-type">Train Type:</div>
+                <div id="train-type"class="filtering-element dropdown">
+                    <span id="inner-dropdown">N/A</span>
+                    <span class="indicator">+</span>
+                    <div class="dropdown-content">Regional</div>
+                    <div class="dropdown-content">Express</div>
+                    <div class="dropdown-content">Inter-City</div>
+                    <div class="dropdown-content">Coastline</div>
+                </div>
+                <div class="filtering-type">Destination:</div>
+                <div class="autocomplete" id="toAutocomplete" >
+                    <input type="text" class="textarea" id="destFilter" name="Destination" placeholder="Destination">
+                    <div class="auto-container"></div>
+                </div>  
+                
+                <div class="filtering-type">Train No:</div>
+                <div id="train-num" class="number-container"><input type="text" class="textarea_single" name="number" placeholder="_" maxlength="1"><input type="text" class="textarea_single" name="number" placeholder="_" maxlength="1"><input type="text" class="textarea_single" name="number" placeholder="_" maxlength="1"><input type="text" class="textarea_single" name="number" placeholder="_" maxlength="1"></div>
+                <div class="filtering-type">Time Range:</div>
+                <div class="time-selector-container">
+                    <div id="time-slider" class="time-slider">
+                        <div draggable = "false" class="time-handle time-handle-left"></div>
+                        <div draggable = "false" class="time-handle time-handle-right"></div>
+
+                        
+                        <div draggable = "false" id="selected-segment" class="selectedSegment"></div>
+                        <div id="time-display-container">
+                            <div id="time-display-left" class="time-display">12<br>00</div>
+                            <div id="train-count"><span id="trains-beeg">45</span><br><span id="train-back">trains fit</span></div>
+                            <div id="time-display-right" class="time-display">12<br>00</div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="about-me-container">
+        <div class="about-me-header">
+
+        <div class="inner-header">ABOUT US</div>
+
+        </div>
+
+        <div class="about-me-inner">
+            The <span class="highlight">Azure Ocean Rail Union</span> is the national railway provider of the AO. With over 38,000 kilometers of track, we are one of the backbones of transport and logistics, providing both passenger and freight services. The Union was founded over 100 years ago as a labor union of rail workers under the then-national rail company of the Lafarvets, before becoming the sole overseer of Azure Ocean rail during the worker's revolution. Since then, we have expanded our rail network to every corner of the AO, and established high-speed services travelling as fast as 150 miles per hour. For more on our history, visit our <span class="history">History</span> page. For information on our freight services, please visit our <a href="about:blank">freight rail website.</a><br>
+            <br><div class="about-header">Current Union Leadership</div>
+            The Union is headed by a worker's council of 5, currently lead by <span class="highlight">Lenai Berkmann</span>.
+            <div class="council-container">
+                <div class="single-container">
+                    <div class="single-image"></div>
+                    <div class="single-name">Lenai Berkmann</div>
+                </div>
+                <div class="single-container">
+                    <div class="single-image"></div>
+                    <div class="single-name">Mina Sortal</div>
+                </div>
+                <div class="single-container">
+                    <div class="single-image"></div>
+                    <div class="single-name">Tari Leavens</div>
+                </div>
+                <div class="single-container">
+                    <div class="single-image"></div>
+                    <div class="single-name">Charles Bantam</div>
+                </div>
+                <div class="single-container">
+                    <div class="single-image"></div>
+                    <div class="single-name">Kina Stari</div>
+                </div>
+                
+            </div>
+
+            More information can be found on our <a href="about:blank">Union Portal</a>, along with available positions and contact information.
+            
+        </div>
+    </div>
+    <div class="footer"></div>
+
+    <script type="module" src="index.js"></script>
+   
+    
+</body>
+</html>
