@@ -5,7 +5,7 @@ let selectorTwo = $("#selectortwo");
 let navDropper = $("#nav-dropdown-more")
 let navDropperIcon = $("#nav-dropped-icon")
 
-const destinations = ["Nantar", "Mineyta", "Mezinta", "Briskton","Brisk","New Wye", "Briss", "Subtari", "Tanc-Maraj", "Maraj", "Amdri", "Brisan", "Jessin", "Dontal", "Ardinburg", "Jan", "Marisban", "Nurispol", "Nv. Prova", "Prova", "Nur. Drinsar", "Portland"]
+const destinations = ["Nantar", "Mineyta", "Mezinta", "Briskton","Brisk","New Wye", "Briss", "Subtari", "Tanc-Maraj", "Maraj", "Tanc", "Amdri", "Brisan", "Jessin", "Dontal", "Ardinburg", "Jan", "Marisban", "Nurispol", "Nv. Prova", "Prova", "Nur. Drinsar", "Portland"]
 const statusoptions = ["BOARDING", "LATE", "EARLY", "DEPARTED", "ON-TIME"]
 const trainTypes = ["Regional", "Express", "Inter-city Express", "International", "Coastline", "Inter-city"]
 
