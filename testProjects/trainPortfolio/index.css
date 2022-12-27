@@ -183,6 +183,83 @@ html{
 
 
 
+#nav-dropdown-more:before{
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.0);
+    width:100%;
+    height:2px;
+    top:40px;
+    left:0px;
+
+    transition: all 0.25s cubic-bezier(.22,.61,.36,1);
+}
+#nav-dropdown-more.should-open::before{
+    content: "";
+    position: absolute;
+    background-color: var(--border);
+    width:100%;
+    height:3px;
+    top:60px;
+    left:0px;
+    opacity: 0.6;
+}
+
+#nav-dropdown-more .nav-dropdown-children{
+    position: absolute;
+    top:0px;
+    opacity: 0;
+    transition: all 0.1s ease;
+    top:1.6em;
+    width: 207px;
+    left:0px;
+    text-align: center;
+    box-sizing: border-box;
+    
+}
+
+#nav-dropdown-more.should-open .nav-dropdown-children{
+    opacity: 1;
+    transition: all 0.2s ease;
+}
+
+#nav-dropdown-more.should-open .nav-dropdown-children:nth-child(2){
+    
+    top:2.8em
+}
+#nav-dropdown-more.should-open .nav-dropdown-children:nth-child(3){
+   
+    top:4.55em
+}
+
+#nav-dropdown-more.should-open .nav-dropdown-children:nth-child(4){
+   
+    top:6.3em
+}
+
+#nav-dropdown-more.should-open .nav-dropdown-children:nth-child(5){
+   
+    top:8.05em
+}
+
+#nav-dropdown-more.should-open .nav-dropdown-children:hover::before{
+    background-color: #0072b0;
+    content: "";
+    width:195px;
+    height:54px;
+    left:6px;
+    top:-18px;
+    border-radius: 15px;
+    position: absolute;
+    z-index: -1;
+    
+}
+
+#nav-dropdown-more.should-open .nav-dropdown-children:hover{
+    color:white;
+}
+
+
 #selector{
     width: 200px;
     height:100%;
@@ -203,13 +280,13 @@ html{
 
 #selector.selectorOpen{
     /* background-color: red; */
-    height: 500px;
+    height: 287px;
     z-index: 100;
     top:0px;
 }
 
 #selectortwo.selectorOpen{
-    height: 500px;
+    height: 287px;
     top:0px;
     z-index: 99;
 }
@@ -1459,7 +1536,7 @@ html{
     display: flex;
     white-space: nowrap;
     position: absolute;
-    right:10px;
+    right:20px;
     top:calc(100% + 10px);
     font-family: "auxmono";
     

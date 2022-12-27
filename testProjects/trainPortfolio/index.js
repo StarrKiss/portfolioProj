@@ -139,6 +139,7 @@ function removeNavDropper(){
     selectorTwo.classList.remove("selectorOpen")
 
     navDropperIcon.classList.remove("openIcon")
+    navDropper.classList.remove("should-open")
 }
 
 
@@ -147,6 +148,7 @@ function activateNavDropper(){
     selectorTwo.classList.add("selectorOpen")
 
     navDropperIcon.classList.add("openIcon")
+    navDropper.classList.add("should-open")
 }
 function initMouseover(){
     const navParent = document.getElementById('navparent');
