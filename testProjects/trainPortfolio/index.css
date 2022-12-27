@@ -178,6 +178,7 @@ html{
 .nav-item.nav-right{
     align-self: flex-end;
     margin-left: auto;
+    z-index: 101;
 }
 
 
@@ -210,6 +211,7 @@ html{
 #selectortwo.selectorOpen{
     height: 500px;
     top:0px;
+    z-index: 99;
 }
 
 #selectortwo{
@@ -1433,7 +1435,12 @@ html{
     margin-left: 10px;
     margin-right: -9px;
     background-position-y: 2.5px;
+    transition: all 0.1s ease;
     background-image: url("dropdown-2.svg");
+}
+
+.loc-icon.icon-dropdown.openIcon{
+    transform: scaleY(-1);
 }
 
 .test{

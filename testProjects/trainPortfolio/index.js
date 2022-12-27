@@ -3,6 +3,7 @@ const $ = document.querySelector.bind(document);
 let selector = $("#selector");
 let selectorTwo = $("#selectortwo");
 let navDropper = $("#nav-dropdown-more")
+let navDropperIcon = $("#nav-dropped-icon")
 
 const destinations = ["Nantar", "Mineyta", "Mezinta", "Briskton","Brisk","New Wye", "Briss", "Subtari", "Tanc-Maraj", "Maraj", "Amdri", "Brisan", "Jessin", "Dontal", "Ardinburg", "Jan", "Marisban", "Nurispol", "Nv. Prova", "Prova", "Nur. Drinsar", "Portland"]
 const statusoptions = ["BOARDING", "LATE", "EARLY", "DEPARTED", "ON-TIME"]
@@ -136,11 +137,16 @@ function generateRows(depList){
 function removeNavDropper(){
     selector.classList.remove("selectorOpen")
     selectorTwo.classList.remove("selectorOpen")
+
+    navDropperIcon.classList.remove("openIcon")
 }
+
 
 function activateNavDropper(){
     selector.classList.add("selectorOpen")
     selectorTwo.classList.add("selectorOpen")
+
+    navDropperIcon.classList.add("openIcon")
 }
 function initMouseover(){
     const navParent = document.getElementById('navparent');
