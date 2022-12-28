@@ -148,7 +148,7 @@ html{
     background-repeat: repeat-x;
     
     /* clip-path: inset(0% 0% -10000% 0% round 10px); */
-    clip-path: polygon(0% 0%, 100% 0%, 100% 1000%, 50% 100%, 0% 100%);
+    clip-path: path('M 9.9994289,0 H 10000 V 600 H 0 V 60 H 9.9994289 C 4.4597434,60 0,55.539682 0,50 V 10 C 0,4.4603182 4.4597434,0 9.9994289,0 Z')
 }
 
 .nav-item{
