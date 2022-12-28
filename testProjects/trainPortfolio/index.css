@@ -42,7 +42,6 @@ html{
     
     align-items: center;
     justify-content: normal;
-
 }
 
 
@@ -147,9 +146,9 @@ html{
     
     background-position-y: center;
     background-repeat: repeat-x;
-
-    overflow-x: clip;
-    overflow-y: visible;
+    
+    /* clip-path: inset(0% 0% -10000% 0% round 10px); */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 1000%, 50% 100%, 0% 100%);
 }
 
 .nav-item{
@@ -182,6 +181,10 @@ html{
 }
 
 
+#nav-dropdown-more{
+    z-index: 10000;
+
+}
 
 #nav-dropdown-more:before{
     content: "";
@@ -280,13 +283,13 @@ html{
 
 #selector.selectorOpen{
     /* background-color: red; */
-    height: 287px;
+    height: 285px;
     z-index: 100;
     top:0px;
 }
 
 #selectortwo.selectorOpen{
-    height: 287px;
+    height: 285px;
     top:0px;
     z-index: 99;
 }
@@ -356,12 +359,6 @@ html{
     
     
     
-}
-
-@media screen and (max-width: 1750px){
-    .header-container{
-        margin-top: 50px;
-    }
 }
 
 .stationContainer{
@@ -1065,7 +1062,7 @@ html{
 
 .graph-holder{
     overflow-x: scroll;
-    overflow-y:visible;
+    overflow-y:hidden;
     height: max-content;
     scrollbar-width: none;
     
@@ -1079,9 +1076,12 @@ html{
     padding:50px;
     padding-top: 10px;
     position: relative;
-   
+
     
 }
+
+
+
 
 .line-circle{
     width: 25px;
@@ -1572,3 +1572,10 @@ html{
     padding-inline:5px;
     border: none;
 } */
+
+
+@media screen and (max-width: 1750px){
+    .header-container{
+        margin-top: 50px;
+    }
+}
