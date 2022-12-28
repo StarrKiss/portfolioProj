@@ -51,7 +51,24 @@
 
     <div class="main-body">
 
-
+        <div class="quick-widget-container">
+            <div class="big-dest-container">
+            <div id="dest-container" class="dest-container">
+                <div class="autocomplete widget-autocomplete" id="originOne" >
+                    <input type="text" class="textarea widget-textarea"  name="Origin" placeholder="Origin">
+                    <div class="auto-container widget-autocontainer"></div>
+                </div>
+                <div id="swap-button" class="widget-arrow"></div>
+                <div class="autocomplete widget-autocomplete" id="destOne" >
+                    <input type="text" class="textarea widget-textarea"  name="DestOne" placeholder="Destination">
+                    <div class="auto-container widget-autocontainer"></div>
+                </div>    
+            </div>
+            <div class="dest-background"></div>
+            <div class="destlabel label-left">Origin</div>
+            <div class="destlabel label-right">Destination</div>
+        </div>
+        </div>
         <div class="header-container">
             <div class="station">Briss CTF</div>
             <div class="stationContainer">
@@ -140,7 +157,7 @@
             </div>
         </div>
         <div class="filtering">
-            <div class="filtering-header">SEARCH</div>
+            <div class="filtering-header">FILTER</div>
             <div class="filtering-box">
                 <div class="filtering-type">Train Type:</div>
                 <div id="train-type"class="filtering-element dropdown">

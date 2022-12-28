@@ -501,16 +501,29 @@ function generateLineSelector(){
 
 
 
+function createSwap(){
+    let destContainer = $("#dest-container")
+    let swapButton = $("#swap-button")
+
+    swapButton.addEventListener('click',(event)=>{
+        console.log("blah")
+        destContainer.classList.toggle("swapped")
+    })
+}
 
 initMouseover()
 generateDepartures()
 generateRows(departureList)
+
 createAutocomplete($("#toAutocomplete"), destinations)
+createAutocomplete($("#originOne"), destinations)
+createAutocomplete($("#destOne"), destinations)
+
 createInput($("#train-num"))
 generateDropdown($("#train-type"))
 generateTimeSlider($("#time-slider"))
 generateLineSelector()
 generateTrainLine($("#graph-container"))
 
-
+createSwap()
 
