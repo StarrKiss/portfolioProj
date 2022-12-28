@@ -126,7 +126,7 @@ html{
     width:calc(100% - 20px);
     height: calc(100% - 20px);
 
-    border-radius: 20px;
+    border-radius: 10px;
     
     background-color: rgba(0, 0, 0, 0.06);
     margin-right: 10px;
@@ -223,7 +223,7 @@ html{
 
 #nav-dropdown-more.should-open .nav-dropdown-children{
     opacity: 1;
-    transition: all 0.2s ease;
+    transition: top 0.2s ease, opacity 0.5s ease
 }
 
 #nav-dropdown-more.should-open .nav-dropdown-children:nth-child(2){
