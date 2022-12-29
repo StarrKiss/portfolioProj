@@ -519,7 +519,16 @@ function createToggle(){
         })
     }
 }
-
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+const years = ["2022", "2023"]
+function createChooser(inputNode, list){
+    for(let i = 0; i<list.length; i++){
+        let toAdd = document.createElement("div")
+        toAdd.innerText = list[i]
+        toAdd.classList.add("chooser-option")
+        inputNode.append(toAdd)
+    }
+}
 initMouseover()
 generateDepartures()
 generateRows(departureList)
@@ -536,3 +545,5 @@ generateTrainLine($("#graph-container"))
 
 createSwap()
 createToggle()
+createChooser($("#month-choose"), months)
+createChooser($("#year-choose"), years)

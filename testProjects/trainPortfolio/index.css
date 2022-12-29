@@ -1466,6 +1466,7 @@ html{
 .single-container{
     flex: 1;
     max-width: 160px;
+    min-width: 160px;
     /* height:200px; */
     background-color: #f7f7e9;
     border: var(--border) 3px solid;
@@ -1604,7 +1605,7 @@ html{
 .quick-widget-container{
     margin-top:20px;
     width:100%;
-    height:230px;
+    height:257px;
     background-color: #fffff8;
     border-radius: 10px;
     border: var(--border) 3px solid;
@@ -1744,6 +1745,8 @@ html{
     height:100%;
     padding:10px;
     box-sizing: border-box;
+    padding-left: 23px;
+
 }
 
 .outer-switch{
@@ -1778,18 +1781,31 @@ html{
 .filter-options-container{
     display: flex;
     /* background-color: red; */
-    width:69%;
     position: absolute;
     top:120px;
     height:100%;
+    border-top: var(--border) 3px solid;
     gap:5px;
+    padding-top: 0px;
     justify-content: space-between;
     vertical-align: middle;
     margin-block: auto;
 }
+
+.date-box{
+    /* background-color: red; */
+    width:115%; 
+    border-left: var(--border) 3px solid;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
 .option-container{
     display: flex;
     width:100%;
+    margin-top: 30px;
     vertical-align: center;
 }
 
@@ -1805,4 +1821,32 @@ html{
     font-size: 20px;
     font-family: "auxmono";
     opacity: 0.8;
+}
+
+.chooser-selected{
+    font-family: "Erbar";
+    font-size: 23px;
+    border-bottom: var(--border) 3px solid;
+}
+
+.chooser-option{
+    font-family: "auxmono";
+    font-size: 22px;
+    padding:3px;
+    
+    border-radius: 10px;
+}
+
+.chooser-option:nth-child(1){
+    margin-top: 3px;
+}
+
+.to-choose{
+    overflow-y: scroll;
+    height: 100px;
+}
+
+.chooser-option:hover{
+    background-color: #0075b4;
+    color:white
 }
