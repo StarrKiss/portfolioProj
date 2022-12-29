@@ -511,6 +511,15 @@ function createSwap(){
     })
 }
 
+function createToggle(){
+    let toggleables = document.getElementsByClassName("swappable")
+    for(let i = 0; i< toggleables.length; i++){
+        toggleables[i].addEventListener('click', (event)=>{
+            toggleables[i].classList.toggle("toggled")
+        })
+    }
+}
+
 initMouseover()
 generateDepartures()
 generateRows(departureList)
@@ -526,4 +535,4 @@ generateLineSelector()
 generateTrainLine($("#graph-container"))
 
 createSwap()
-
+createToggle()
