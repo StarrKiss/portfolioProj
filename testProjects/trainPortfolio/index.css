@@ -1785,7 +1785,7 @@ html{
     top:120px;
     height:100%;
     border-top: var(--border) 3px solid;
-    gap:5px;
+    gap:20px;
     padding-top: 0px;
     justify-content: space-between;
     vertical-align: middle;
@@ -1800,6 +1800,8 @@ html{
     display: flex;
     gap: 10px;
     padding-left: 10px;
+    padding-right: 10px;
+    justify-content: space-between;
     box-sizing: border-box;
 }
 .option-container{
@@ -1807,6 +1809,10 @@ html{
     width:100%;
     margin-top: 30px;
     vertical-align: center;
+}
+
+.day-container{
+    width:130%;
 }
 
 .option-label{
@@ -1849,4 +1855,53 @@ html{
 .chooser-option:hover{
     background-color: #0075b4;
     color:white
+}
+
+.day-inner{
+    margin-top: 6px;
+        width:100%;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        vertical-align: middle;
+        gap: 10px;
+        /* justify-content: space-between; */
+}
+
+.dayList{
+    margin-top: 4px;
+    font-family: "auxmono";
+    font-size: 20px;
+}
+
+.dayList em{
+    font-style: normal;
+    color: var(--border)
+}
+
+#curDay{
+    width:max-content;
+    margin-top: auto;
+    margin-inline: auto;
+    background-color: #fffff8;
+    box-sizing: border-box;
+    outline: none;
+    border:  3px solid var(--border);
+    text-align: center;
+    border-radius: 10px;
+    padding-inline: 5px;
+
+    font-family: "auxmono";
+    font-size: 20px;
+    z-index: 1;
+}
+
+.underliner{
+    background-color: var(--border);
+    position: absolute;
+    top:49px;
+    width:73px;
+    height:3px;
+    margin-left: -14px;
 }
