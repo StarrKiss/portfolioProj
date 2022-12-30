@@ -1834,6 +1834,7 @@ html{
     font-family: "Erbar";
     font-size: 23px;
     border-bottom: var(--border) 3px solid;
+    text-align: left;
 }
 
 .chooser-option{
@@ -1851,6 +1852,7 @@ html{
 .to-choose{
     overflow-y: scroll;
     height: 100px;
+    text-align: left;
 }
 
 .chooser-option:hover{
@@ -1863,6 +1865,7 @@ html{
         width:100%;
         text-align: center;
         display: flex;
+        /* padding-left: 3px; */
         flex-direction: row;
         justify-content: center;
         vertical-align: middle;
@@ -1932,6 +1935,12 @@ html{
     display: flex;
 }
 
+.widget-info-container{
+    /* background-color: red; */
+    height:100%;
+    width:100%;
+}
+
 .search-button{
     background-color: #fffff8;
     text-align: center;
@@ -1946,6 +1955,8 @@ html{
     padding-inline: 17px;
     justify-content: center;
     transition: all 0.2s ease;
+
+    user-select: none;
 }
 
 .search-button:hover{
