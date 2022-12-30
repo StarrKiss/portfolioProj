@@ -1898,10 +1898,14 @@ html{
     z-index: 1;
 }
 
+#curDay:focus{
+    border-color: #0072b0;
+}
+
 .underliner{
     background-color: var(--border);
     position: absolute;
-    top:58px;
+    top:59px;
     width:73px;
     height:3px;
     margin-left: -14px;
