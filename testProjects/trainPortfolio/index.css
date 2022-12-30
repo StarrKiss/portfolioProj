@@ -1757,6 +1757,7 @@ html{
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.78);
     overflow: clip;
+    cursor:pointer;
     transition: all 0.3s ease;
 }
 
@@ -1851,6 +1852,7 @@ html{
 
 .to-choose{
     overflow-y: scroll;
+    cursor:  pointer;
     height: 100px;
     text-align: left;
 }
@@ -1935,11 +1937,6 @@ html{
     display: flex;
 }
 
-.widget-info-container{
-    /* background-color: red; */
-    height:100%;
-    width:100%;
-}
 
 .search-button{
     background-color: #fffff8;
@@ -1957,6 +1954,8 @@ html{
     transition: all 0.2s ease;
 
     user-select: none;
+
+    cursor: pointer;
 }
 
 .search-button:hover{
@@ -1975,4 +1974,28 @@ html{
     margin: auto;
     text-align: center;
     /* color:black; */
+}
+
+.single-info-widget{
+    font-family: "erbar";
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.4)
+}
+
+/* .single-info-widget::after{
+    content:"||";
+    padding-left: 10px;
+    font-family: "auxmono";
+    letter-spacing: -10px;
+} */
+.widget-info-container{
+    /* background-color: red; */
+    height:100%;
+    vertical-align: center;
+    display: flex;
+    width:100%;
+    padding-inline: 18px;
+    gap:15px;
 }
