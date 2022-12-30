@@ -522,11 +522,21 @@ function createToggle(){
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 const years = ["2022", "2023"]
 function createChooser(inputNode, list){
+    let curSelected = undefined;
     for(let i = 0; i<list.length; i++){
         let toAdd = document.createElement("div")
         toAdd.innerText = list[i]
         toAdd.classList.add("chooser-option")
         inputNode.append(toAdd)
+
+        toAdd.addEventListener('click', (event)=>{
+            if(curSelected != undefined){
+                curSelected.classList.remove("curSelected")
+            }
+
+            toAdd.classList.add("curSelected");
+            curSelected = toAdd;
+        })
     }
 }
 initMouseover()

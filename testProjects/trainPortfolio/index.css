@@ -1605,7 +1605,7 @@ html{
 .quick-widget-container{
     margin-top:20px;
     width:100%;
-    height:338px;
+    height:349px;
     background-color: #fffff8;
     border-radius: 10px;
     border: var(--border) 3px solid;
@@ -1808,7 +1808,7 @@ html{
 .option-container{
     display: flex;
     width:100%;
-    margin-top: 35px;
+    margin-top: 13px;
     vertical-align: center;
 }
 
@@ -1842,8 +1842,11 @@ html{
     font-family: "auxmono";
     font-size: 22px;
     padding:3px;
+    box-sizing: border-box;
     
     border-radius: 10px;
+    padding-inline: 5px;
+    /* left:5px; */
 }
 
 .chooser-option:nth-child(1){
@@ -1851,15 +1854,29 @@ html{
 }
 
 .to-choose{
+    /* overflow-x: visible; */
     overflow-y: scroll;
     cursor:  pointer;
-    height: 100px;
+    height: 114px;
     text-align: left;
+}
+
+
+.chooser-option.curSelected{
+    outline: 3px #0075b4 solid;
+    outline-offset: -3px;
+    /* background-color: rgba(0, 0, 0, 0.06); */
+    color: #0075b4;
 }
 
 .chooser-option:hover{
     background-color: #0075b4;
     color:white
+}
+
+.chooser-option.curSelected:hover{
+    color:black;
+    background-color: rgba(0, 0, 0, 0.03);
 }
 
 .day-inner{
@@ -1929,7 +1946,7 @@ html{
     background-color: #f0f0e9;
     /* background-color: red; */
     height: 77px;
-    top:256px;
+    top:267px;
     width:100%;
 
     padding:10px;
@@ -1998,4 +2015,18 @@ html{
     width:100%;
     padding-inline: 18px;
     gap:15px;
+}
+
+
+.option-info{
+    position: absolute;
+    /* background-color: red; */
+    width:59%;
+    font-family: "Erbar";
+    font-size: 21px;
+    text-align: center;
+    top:86px;
+    line-height: 100%;
+    opacity: 0.5;
+    margin-left: -14px;
 }
