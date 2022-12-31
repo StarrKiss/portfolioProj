@@ -1468,7 +1468,7 @@ html{
     max-width: 160px;
     min-width: 160px;
     /* height:200px; */
-    background-color: #f7f7e9;
+    background-color: #f0f0e9;
     border: var(--border) 3px solid;
     border-radius: 10px;
     padding:10px;
@@ -1874,6 +1874,11 @@ html{
     color:white
 }
 
+.invalid-option{
+    pointer-events: none;
+    cursor: initial;
+}
+
 .chooser-option.curSelected:hover{
     color:black;
     background-color: rgba(0, 0, 0, 0.03);
@@ -1882,6 +1887,7 @@ html{
 .day-inner{
     margin-top: 15px;
         width:100%;
+        position: relative;
         text-align: center;
         display: flex;
         /* padding-left: 3px; */
@@ -1927,8 +1933,9 @@ html{
 .underliner{
     background-color: var(--border);
     position: absolute;
-    top:58.5px;
-    width:73px;
+    top:13.5px;
+    /* width:55%; */
+    width:calc(100% - 85.5px);
     height:3px;
     margin-left: -14px;
 }
@@ -2029,4 +2036,13 @@ html{
     line-height: 100%;
     opacity: 0.5;
     margin-left: -14px;
+}
+
+/* #year-chooser-container{
+    display: none;
+} */
+
+#month-choose .chooser-option{
+    min-width: 9ch;
+    /* color: red */
 }

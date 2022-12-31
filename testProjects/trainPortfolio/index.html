@@ -85,10 +85,10 @@
                 </div>
             </div>
 
-            <div class="option-info">Booking is only available 4 weeks in advance, and is not available for regional trains. For more info, please visit the <a href="about:blank">Pre-book</a> page.</div>
+            <div class="option-info">Booking is only available 5 months in advance, and is not available for regional trains. For more info, please visit the <a href="about:blank">Pre-book</a> page.</div>
 
             <div class="date-box">
-                <div class="chooser-container">
+                <div class="chooser-container" id="year-chooser-container">
                     <div class="chooser-selected">Year</div>
                     <div id="year-choose" class="to-choose">
 
@@ -97,13 +97,13 @@
                 <div class="chooser-container">
                     <div class="chooser-selected">Month</div>
                     <div id="month-choose" class="to-choose">
-
+                        <div class="chooser-option invalid-option">No  Year</div>
                     </div>
                 </div>
                 <div class="chooser-container day-container">
                     <div class="chooser-selected">Day</div>
                     <div class="day-inner">
-                        <div class="dayList" id="start-date"><em>[</em>0<em>]</em></div>
+                        <div class="dayList" id="start-date"><em>[</em>1<em>]</em></div>
                         <input type="text" id="curDay" name="curDay" required
                         minlength="1" maxlength="2" size="2">
                         <div class="dayList" id="end-date"><em>[</em>31<em>]</em></div>

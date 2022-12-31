@@ -511,6 +511,12 @@ function createSwap(){
     })
 }
 
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
 function createToggle(){
     let toggleables = document.getElementsByClassName("swappable")
     for(let i = 0; i< toggleables.length; i++){
@@ -521,7 +527,8 @@ function createToggle(){
 }
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 const years = ["2022", "2023"]
-function createChooser(inputNode, list){
+function createChooser(inputNode, list, toPass = undefined){
+    removeAllChildNodes(inputNode)
     let curSelected = undefined;
     for(let i = 0; i<list.length; i++){
         let toAdd = document.createElement("div")
@@ -536,8 +543,60 @@ function createChooser(inputNode, list){
 
             toAdd.classList.add("curSelected");
             curSelected = toAdd;
+
+            if(toPass!= undefined){
+                toPass(curSelected.innerText)
+            }
         })
     }
+}
+
+function daysInMonth (month, year) {
+        return new Date(year, month, 0).getDate();
+}
+
+
+function createDateSelector(){
+    const date = new Date();
+
+    const monthHandler= function(selectedMonth){
+        let endDate = $("#end-date")
+        let selectMonth = months.indexOf(selectedMonth)
+        endDate.innerHTML = "<em>[</em>" + daysInMonth(selectMonth+1, curYear)+ "<em>]</em>"
+    }
+
+    const yearSelected = function(chosenYear){
+        console.log(chosenYear)
+        let validMonths = []
+        let monthsLeftInYear = 12 - curMonth;
+        if(parseInt(chosenYear) == curYear){
+            for (let i = curMonth; i < Math.min(13, curMonth+5); i++) {
+                validMonths.push(months[i-1])
+            }
+        }else{
+            for (let i = 1; i < 5 - monthsLeftInYear; i++) {
+                validMonths.push(months[i-1])
+            }
+        }
+        createChooser($("#month-choose"), validMonths, monthHandler)
+        console.log(monthsLeftInYear)
+    }
+    let curYear = date.getFullYear();
+    let curMonth = date.getMonth() + 1;
+    
+
+    
+    if(curMonth >= 12 - 4){
+        let yearList = [curYear.toString(), (curYear+1).toString()]
+        createChooser($("#year-choose"), yearList, yearSelected)
+    }else{
+        console.log("blah")
+        $("#year-chooser-container").style.display = "none"
+        yearSelected(curYear)
+    }
+    
+
+    
 }
 initMouseover()
 generateDepartures()
@@ -555,5 +614,4 @@ generateTrainLine($("#graph-container"))
 
 createSwap()
 createToggle()
-createChooser($("#month-choose"), months)
-createChooser($("#year-choose"), years)
+createDateSelector()
