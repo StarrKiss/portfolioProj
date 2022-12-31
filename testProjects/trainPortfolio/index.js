@@ -5,9 +5,11 @@ let selectorTwo = $("#selectortwo");
 let navDropper = $("#nav-dropdown-more")
 let navDropperIcon = $("#nav-dropped-icon")
 
-const destinations = ["Nantar", "Mineyta", "Mezinta", "Briskton","Brisk","New Wye", "Briss", "Subtari", "Tanc-Maraj", "Maraj", "Tanc", "Amdri", "Brisan", "Jessin", "Dontal", "Ardinburg", "Jan", "Marisban", "Nurispol", "Nv. Prova", "Prova", "Nur. Drinsar", "Portland"]
+const destinations = ["Bado", "Marayn", "Brintar", "Sibline", "Nantar", "Mineyta", "Mezinta", "Briskton","Brisk","New Wye", "Briss", "Subtari", "Maraj", "Tanc-Maraj", "Tanc", "Amdri", "Brisan", "Jessin", "Dontal", "Ardinburg", "Jan", "Marisban", "Nurispol", "Nv. Prova", "Prova", "Nur. Drinsar", "Portland", "Nv. Sutui", "Sirkat"]
 const statusoptions = ["BOARDING", "LATE", "EARLY", "DEPARTED", "ON-TIME"]
 const trainTypes = ["Regional", "Express", "Inter-city Express", "International", "Coastline", "Inter-city"]
+
+const timeArray = [];
 
 let navDropOpen = false;
 
@@ -594,17 +596,91 @@ function createDateSelector(){
         $("#year-chooser-container").style.display = "none"
         yearSelected(curYear)
     }
-    
-
-    
+        
 }
+
+function generateTimeArray(){
+    const minTime = 15
+    const maxTime = 180
+    for (let i = 0; i<destinations.length-1; i++){
+        timeArray[i] = getRandomIntInclusive(minTime, maxTime)
+    }
+}
+
+function getTimeBetweenDest(originStation, destStation){
+    const origIndex = destinations.indexOf(originStation)
+    const destIndex = destinations.indexOf(destStation)
+
+    let startingPoint = Math.min(origIndex, destIndex);
+    let endPoint = Math.max(origIndex, destIndex);
+
+    let toReturn = 0;
+    for(let i = startingPoint; i<endPoint; i++){
+        toReturn+= timeArray[i]
+    }
+    return toReturn;
+}
+
+
+function createDestManager(){
+    let stationOne = $("#originOne");
+    let stationTwo = $("#destOne");
+
+    let lengthContainer = $("#length-container")
+
+    let statOneTextArea = stationOne.querySelector('.textarea')
+    let statTwoTextArea = stationTwo.querySelector('.textarea')
+
+    const calculateTime = function(){
+        let valOne = statOneTextArea.value;
+        let valTwo = statTwoTextArea.value;
+        if(checkIfValid(valOne, valTwo)){
+            let totalTime = getTimeBetweenDest(valOne, valTwo)
+            let toCalc = ""
+            toCalc += Math.floor(totalTime/60).toString()
+            if(Math.floor(totalTime/60) >= 2){
+                toCalc += "hrs "
+            }else{
+                toCalc += "hr "
+            }
+            toCalc += (totalTime%60).toString();
+            toCalc += "m"
+            lengthContainer.innerText = toCalc;
+        }else{
+            lengthContainer.innerText = "[N/A]"
+        }
+    }
+
+    const checkIfValid = function(valOne, valTwo){
+       
+
+        if(destinations.indexOf(valOne) != -1 && destinations.indexOf(valTwo) != -1){
+            return true
+        } else{
+            return false;
+        }
+    }
+
+    stationOne.addEventListener('focusout', (event) => {
+        calculateTime()
+    });
+
+    stationTwo.addEventListener('focusout', (event) =>{
+        calculateTime()
+    });
+}
+
+
 initMouseover()
+generateTimeArray()
 generateDepartures()
 generateRows(departureList)
 
 createAutocomplete($("#toAutocomplete"), destinations)
 createAutocomplete($("#originOne"), destinations)
 createAutocomplete($("#destOne"), destinations)
+
+createDestManager()
 
 createInput($("#train-num"))
 generateDropdown($("#train-type"))
@@ -615,3 +691,4 @@ generateTrainLine($("#graph-container"))
 createSwap()
 createToggle()
 createDateSelector()
+// console.log(getTimeBetweenDest(destinations[0], destinations[destinations.length-1]))
