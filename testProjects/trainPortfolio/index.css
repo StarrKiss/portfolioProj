@@ -2046,3 +2046,17 @@ html{
     min-width: 9ch;
     /* color: red */
 }
+
+.inline-icon-money{
+    width:1.4ch;
+    height:1em;
+    display: inline-block;
+    position: relative;
+    /* background-color: red; */
+    top:3px;
+    margin-right: 3px;
+    opacity: 0.5;
+    background-image: url(singleCash.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
