@@ -623,6 +623,7 @@ function generateTimeArray(){
     const minTime = 15
     const maxTime = 180
     for (let i = 0; i<destinations.length-1; i++){
+        
         timeArray[i] = getRandomIntInclusive(minTime, maxTime)
     }
 }
