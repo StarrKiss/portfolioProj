@@ -527,6 +527,26 @@ function createToggle(){
         })
     }
 }
+
+
+function formatMinutes(totalTime){
+    let toCalc = ""
+            let hours = Math.floor(totalTime/60).toString()
+            if(hours > 0){
+                toCalc += hours;
+                if(Math.floor(totalTime/60) >= 2){
+                    toCalc += "hrs "
+                }else{
+                    toCalc += "hr "
+                }
+            }
+            toCalc += (totalTime%60).toString();
+            toCalc += "m"
+
+    return toCalc;
+}
+
+
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 const years = ["2022", "2023"]
 function createChooser(inputNode, list, toPass = undefined){
@@ -628,6 +648,8 @@ function createDestManager(){
 
     let lengthContainer = $("#length-container")
 
+    let saveTimeContainer = $("#save-time-hsr")
+
     let statOneTextArea = stationOne.querySelector('.textarea')
     let statTwoTextArea = stationTwo.querySelector('.textarea')
 
@@ -636,16 +658,10 @@ function createDestManager(){
         let valTwo = statTwoTextArea.value;
         if(checkIfValid(valOne, valTwo)){
             let totalTime = getTimeBetweenDest(valOne, valTwo)
-            let toCalc = ""
-            toCalc += Math.floor(totalTime/60).toString()
-            if(Math.floor(totalTime/60) >= 2){
-                toCalc += "hrs "
-            }else{
-                toCalc += "hr "
-            }
-            toCalc += (totalTime%60).toString();
-            toCalc += "m"
+            
+            let toCalc = formatMinutes(totalTime)
             lengthContainer.innerText = toCalc;
+            saveTimeContainer.innerText = "Saves " + formatMinutes(Math.floor(totalTime*0.15))
         }else{
             lengthContainer.innerText = "[N/A]"
         }

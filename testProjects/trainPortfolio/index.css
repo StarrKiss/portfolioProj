@@ -1781,6 +1781,31 @@ html{
     height:50%;
     border-radius: 3px;
 }
+
+.inner-switch::after{
+    content: "";
+    
+    position: absolute;
+    /* background-color: red; */
+    width:70%;
+    height:80%;
+    top:2px;
+    
+    border-radius: 3px;
+    
+    left: 2.5px;
+
+    background-image: url(looper.png);
+    background-size: 6px;
+    /* background-color: red; */
+}
+
+.outer-switch.toggled .inner-switch::after{
+    background-image: url(looper.png);
+    background-size: 6px;
+    filter: brightness(0) saturate(100%) invert(40%) sepia(97%) saturate(2076%) hue-rotate(132deg) brightness(98%) contrast(101%);
+}
+
 .filter-options-container{
     display: flex;
     /* background-color: red; */
@@ -1802,8 +1827,8 @@ html{
     height: 100%;
     display: flex;
     gap: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 8px;
+    padding-right: 0px;
     justify-content: space-between;
     box-sizing: border-box;
 }
@@ -1963,6 +1988,11 @@ html{
     display: flex;
 }
 
+.chooser-container:nth-child(2){
+    border-inline: 2px rgba(0, 0, 0, 0.1) solid;
+    box-sizing: border-box;
+    padding-inline: 8px;
+}
 
 .search-button{
     background-color: #fffff8;
@@ -2030,14 +2060,14 @@ html{
 .option-info{
     position: absolute;
     /* background-color: red; */
-    width:59%;
+    width:56%;
     font-family: "Erbar";
     font-size: 21px;
     text-align: center;
     top:86px;
     line-height: 100%;
     opacity: 0.5;
-    margin-left: -14px;
+    margin-left: 6px;
 }
 
 /* #year-chooser-container{
