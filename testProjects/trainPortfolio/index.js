@@ -661,7 +661,7 @@ function createDestManager(){
             
             let toCalc = formatMinutes(totalTime)
             lengthContainer.innerText = toCalc;
-            saveTimeContainer.innerText = "Saves " + formatMinutes(Math.floor(totalTime*0.15))
+            saveTimeContainer.innerText = "Saves " + formatMinutes(Math.floor(totalTime*0.35))
         }else{
             lengthContainer.innerText = "[N/A]"
         }
