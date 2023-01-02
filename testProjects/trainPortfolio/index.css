@@ -1988,8 +1988,14 @@ html{
     display: flex;
 }
 
+.chooser-container:nth-child(1){
+    border-right: 2px rgba(0, 0, 0, 0.1) solid;
+    box-sizing: border-box;
+    padding-inline: 8px;
+}
+
 .chooser-container:nth-child(2){
-    border-inline: 2px rgba(0, 0, 0, 0.1) solid;
+    border-right: 2px rgba(0, 0, 0, 0.1) solid;
     box-sizing: border-box;
     padding-inline: 8px;
 }
