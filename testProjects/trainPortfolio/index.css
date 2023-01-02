@@ -1340,13 +1340,32 @@ html{
 }
 
 .footer{
+    --bgCol: #d7d7ca;
     margin-bottom: 0px;
-    margin-top:20px;
+    margin-top:50px;
     position: absolute;
     width:100%;
     left:0px;
-    background-color: rgba(0, 0, 0, 0.1);
-    height:100px;
+    background-color: var(--bgCol);
+    height:180px;
+}
+
+.footer:before{
+    background: 
+                linear-gradient(-45deg, var(--bgCol) 16px, red 16px, blue 16px,  transparent 0), 
+                linear-gradient(45deg, var(--bgCol) 16px, transparent 0);
+    background-position: left top;
+    background-repeat: repeat-x;
+    background-size: 22px 32px;
+    content: " ";
+    display: block;
+
+    height: 32px;
+    width: 100%;
+
+    position: relative;
+    bottom: 31px;
+    left:0;
 }
 
 .about-me-container{
@@ -1424,11 +1443,11 @@ html{
     margin-right: auto;
     font-family: "erbar";
     font-size: 25px;
-    max-width: 80%;
+    max-width: 60%;
 }
 
 .about-me-inner a{
-    color:red;
+    color:#0072b0;
     cursor:pointer;
     position: relative;
     z-index: 2;
@@ -1452,7 +1471,7 @@ html{
 
 .council-container{
     /* background-color: red; */
-    width:100%;
+    width:130%;
     display: flex;
 
     justify-content: space-between;
@@ -1460,6 +1479,7 @@ html{
     gap:10px;
     margin-top:20px;
     margin-bottom: 20px;
+    margin-left:-14%;
     
 }
 
@@ -1497,7 +1517,7 @@ html{
 
 .single-image::after{
     color: rgba(0, 0, 0, 0.6);
-    font-family: "auxmono";
+    font-family: "Erbar";
     content: "Image Not Found";
     background-color: transparent;
     position: absolute;
@@ -1508,7 +1528,7 @@ html{
     vertical-align:middle;
     white-space: wrap;
     border-radius: inherit;
-    top:18px;
+    top:33px;
     
 }
 
@@ -1610,7 +1630,7 @@ html{
     border-radius: 10px;
     border: var(--border) 3px solid;
     border-inline: var(--border) 12px groove;
-
+    /* z-index: -1; */
     overflow: clip;
 
     box-sizing: border-box;
@@ -2097,4 +2117,54 @@ html{
     background-image: url(singleCash.svg);
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.inner-footer{
+    width:100%;
+    height:70%;
+    margin-top: -10px;
+    display: flex;
+    /* top:10px; */
+    /* margin-left: 30px;   */
+    justify-content: center;
+    /* background-color: red; */
+}
+
+.aoLogo{
+    /* max-height: 50px; */
+    position: relative;
+    top: 7px;
+    height:115px;
+    filter: drop-shadow(0px 0px 1px rgba(0,0,0,0.1));
+}
+
+.inner-footer-left{
+    margin-left: 70px;
+    vertical-align: middle;
+    padding-right:70px;
+    border-right: var(--border) 3px solid;
+}
+
+.inner-footer-right{
+    /* display: flex; */
+    display: grid;
+    height:100%;
+    /* text-align: center; */
+    grid-template-columns: 1fr 1fr;
+    margin-left: 70px;
+    vertical-align:middle;
+    width:500px;
+    row-gap: 5px;
+    /* justify-content: flex-start;
+    flex-wrap: wrap; */
+
+}
+
+.footer-link{
+    white-space: nowrap;
+    font-size: 18px;
+    text-decoration: underline;
+    opacity: 0.5;
+    cursor:pointer;
+    font-family: "auxmono";
 }
