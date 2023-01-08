@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codenames Card Generator</title>
+    <script type="text/javascript" src="https://livejs.com/live.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="template-container">
+    <div id="basis-card" class="main-card-body">
+        <div class="inner-card-body">
+            <div class="inner-card-section">
+                <div class="top-section">
+                    <div id="upper-text-container" class="inner-top-text">Random Text</div>
+                </div>
+                <div class="top-section">
+                    <div class="inner-top-photo">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="inner-card-section">
+                <div class="inner-card-text">
+                    <div id="lower-text-container"class="fitty-text-container">
+                        Random Text
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="main-page-container">
+        <div class="main-body-container">
+        <div class="main-page-header">Generate Printable Codenames Card Sheet</div>
+        <div class="input-container">
+            <textarea class="textarea"></textarea>
+        </div>
+        <div class="button">Generate Cards</div>
+        </div>
+    </div>
+
+    <div class="card-container"></div>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
