@@ -22,4 +22,6 @@ inputbutton.addEventListener("click", (event)=>{
     mainPageCont.style.display = "none"
 
     print()
+    
+
 }); 
