@@ -40,6 +40,7 @@ html{
     border-bottom: var(--border) solid 3px;
     display: flex;
     
+    z-index: 10000;
     align-items: center;
     justify-content: normal;
 }
@@ -841,11 +842,13 @@ html{
 
 .widget-autocomplete{
     font-size: 30px;
-    
+    z-index: 0;
+    position: relative;
 }
 
 .widget-textarea{
     font-size: 30px;
+    
 }
 
 .textarea:focus + .auto-container,
@@ -1630,11 +1633,11 @@ html{
     border-radius: 10px;
     border: var(--border) 3px solid;
     border-inline: var(--border) 12px groove;
-    /* z-index: -1; */
     overflow: clip;
 
     box-sizing: border-box;
 
+    /* z-index: -1; */
     position: relative;
 }
 
