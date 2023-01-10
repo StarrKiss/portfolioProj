@@ -7,6 +7,13 @@
 }
 
 
+@font-face {
+    font-family: 'GT Pressura Mono VF';
+    src: url('GTPressuraMonoVF.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 @font-face {
     font-family: 'AuxMono';
@@ -438,8 +445,9 @@ html{
 
 .addressContainer{
     padding-right: 15px;
-    font-family: 'AuxMono';
-    font-size: 15px;
+    font-family: 'GT Pressura Mono VF';
+    letter-spacing: 1px;
+    font-size: 17px;
     text-align: right;
     color:white;
 }
@@ -501,10 +509,10 @@ html{
     background-color: #2b2b28;
     font-size: 23px;
     
-    padding:2px;
+    padding:3px;
     border-radius: 3px;
     box-sizing: border-box;
-    box-shadow: inset 0px 0px 3px black;
+    /* box-shadow: inset 0px 0px 3px black; */
     margin-top: 2.5px;
     margin-bottom: 2.5px;
     transition: all 2s ease-in-out;
@@ -528,8 +536,8 @@ html{
     box-sizing: border-box;
     padding:10px;
     margin-top: 10px;
-    
-    font-family: 'AuxMono';
+    font-weight: bold;
+    font-family: 'GT Pressura Mono VF';
     display:table-row;
     transition: all 0.2s ease-in-out;
 }
@@ -559,9 +567,6 @@ html{
 .status-late{
     color: #f4e00a;
 }
-.status-early{
-    color: #0ad5f4;
-}
 .status-departed{
     color: #f40a0a;
 }
@@ -573,6 +578,20 @@ html{
     align-items: center;
     justify-content: center;
     
+}
+
+.timeDisplay.depField{
+    font-weight:  bold;
+}
+
+.numberDisplay.depField{
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.platform.depField{
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .depField:active{
@@ -977,7 +996,7 @@ html{
 .time-display{
     position:relative;
     top:25px;
-    font-family: 'AuxMono';
+    font-family: 'Aux Mono';
     font-size: 20px;
     white-space: nowrap;
 
@@ -1030,7 +1049,7 @@ html{
 }
 
 #train-count{
-    font-family: 'AuxMono';
+    font-family: 'GT Pressura Mono VF';
     font-size: 15px;
     margin-top:5px;
     
@@ -1042,17 +1061,18 @@ html{
     
     font-size: 25px;
     background-color: #fffff8;
-    padding-right: 5px;
-    border-radius: 6px;
-    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.2);
+    padding-right: 10px;
+    padding-left: 5px;
+    /* border-radius: 6px; */
+    /* box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.2); */
 }
 
 #train-back{
     background-color: #fffff8;
-    border-radius: 6px;
+    /* border-radius: 6px; */
     white-space: nowrap;
     padding-inline: 6px;
-    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.2);
+    /* box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.2); */
 }
 
 
@@ -1538,7 +1558,7 @@ html{
 .single-name{
     margin-top: 12px;
     text-align: center;
-    font-family: "auxmono";
+    font-family: "GT Pressura Mono VF";
     font-size: 20px;
     margin-bottom: 3px;
 }
@@ -1716,7 +1736,7 @@ html{
 
 
 .destlabel{
-    font-family: "auxmono";
+    font-family: "GT Pressura Mono VF";
     font-size: 20px;
     position: absolute;
     top:74px;
@@ -1731,7 +1751,8 @@ html{
     background-color: #0072b0;
     width:1em;
     height:1em;
-    right:90px;
+    top:2px;
+    right:76px;
     border-radius: 100%;
     position: absolute;
 }
@@ -1747,7 +1768,8 @@ html{
     background-color: #b00000;
     width:1em;
     height:1em;
-    right:-25px;
+    top:2px;
+    right:-30px;
     border-radius: 100%;
     position: absolute;
 }
@@ -1756,8 +1778,9 @@ html{
     width:100%;
     height:30px;
     top:74px;
-    font-family: "auxmono";
+    font-family: "GT Pressura Mono VF";
     font-size: 25px;
+    letter-spacing: 2px;
     text-align: center;
     color: var(--text-color);
     position: absolute;
@@ -1875,9 +1898,9 @@ html{
 }
 
 .option-label em{
-    font-style:  normal;
+    font-style:  italic;
     font-size: 20px;
-    font-family: "auxmono";
+    font-family: "GT Pressura Mono VF";
     opacity: 0.8;
 }
 
@@ -1889,7 +1912,7 @@ html{
 }
 
 .chooser-option{
-    font-family: "auxmono";
+    font-family: "GT Pressura Mono VF";
     font-size: 22px;
     padding:3px;
     box-sizing: border-box;
@@ -1897,6 +1920,8 @@ html{
     border-radius: 10px;
     padding-inline: 5px;
     /* left:5px; */
+    /* margin-left: -2px; */
+    position: relative;
 }
 
 .chooser-option:nth-child(1){
@@ -1950,7 +1975,7 @@ html{
 
 .dayList{
     margin-top: 4px;
-    font-family: "auxmono";
+    font-family: "GT Pressura Mono VF";
     font-size: 20px;
 }
 
@@ -1969,9 +1994,9 @@ html{
     border:  3px solid var(--border);
     text-align: center;
     border-radius: 10px;
-    padding-inline: 5px;
+    padding-inline: 2px;
 
-    font-family: "auxmono";
+    font-family: "GT Pressura Mono VF";
     font-size: 20px;
     z-index: 1;
 }
@@ -2171,5 +2196,6 @@ html{
     text-decoration: underline;
     opacity: 0.5;
     cursor:pointer;
-    font-family: "auxmono";
+    font-family: "GT Pressura Mono VF";
+    letter-spacing: 2px;
 }
