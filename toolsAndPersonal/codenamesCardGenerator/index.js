@@ -4,10 +4,15 @@ var textarea = document.querySelector('textarea');
   textarea.style.height = textarea.scrollHeight + 'px';
 })();
 
+
+let checkbox = document.querySelector('#grayscale')
 var inputbutton = document.querySelector('.button');
 let cardContainer = document.querySelector('.card-container')
 let baseCard = document.querySelector('#basis-card');
 inputbutton.addEventListener("click", (event)=>{
+    if(checkbox.checked){
+      baseCard.classList.add("grayscale")
+    }
     let stringsToIterate = textarea.value.split("\n")
     for (let i = 0; i < stringsToIterate.length; i++) {
         let curText = stringsToIterate[i]
